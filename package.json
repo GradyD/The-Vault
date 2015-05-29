@@ -5,8 +5,14 @@
   "description": "A money management program",
   "author": "Your Name <you.name@example.org>",
   "contributors": [
-    {"name": "Grady Duncan","email": "gradyduncan@gmail.com"},
-    {"name": "Trevor Yager","email": ""}
+    {
+      "name": "Grady Duncan",
+      "email": "gradyduncan@gmail.com"
+    },
+    {
+      "name": "Trevor Yager",
+      "email": ""
+    }
   ],
   "main": "./src/main.js",
   "repository": {
@@ -16,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "banking": "^0.3.3"
+  }
 }
