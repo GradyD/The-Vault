@@ -1,0 +1,20 @@
+{
+  "name": "Finance",
+  "productName": "Finance",
+  "version": "0.0.1",
+  "description": "A money management program",
+  "author": "Your Name <you.name@example.org>",
+  "contributors": [
+    {"name": "Grady Duncan","email": "gradyduncan@gmail.com"},
+    {"name": "Trevor Yager","email": ""}
+  ],
+  "main": "./src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/"
+  },
+  "private": true
+}
