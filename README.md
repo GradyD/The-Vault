@@ -7,6 +7,7 @@
 
 * Electron: https://github.com/atom/electron/blob/master/docs/tutorial/quick-start.md
   * Electron is used to build a native desktop apps
+  * API: https://github.com/atom/electron/tree/master/docs/api
 
 ## Recommended Atom Packages
 * editorconfig: https://atom.io/packages/editorconfig
