@@ -1,17 +1,19 @@
 module.exports = function(grunt) {
-  grunt.file.setBase(path.resolve());
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    'create-windows-installer': {
-      appDirectory: path.resolve(),
-      outputDirectory: 'tmp/build/installer',
-      authors: 'My App Inc.',
-      exe: 'myapp.exe'
+    shell: {
+      RunApp: {
+        command: 'node_modules\\electron-prebuilt\\dist\\electron.exe src'
+      }
     }
   });
 
-  grunt.loadNpmTasks('grunt-electron-installer');
+  grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('default', ['create-windows-installer']);
+  grunt.registerTask('test', ['shell']);
+
+  // This eventually will build the app/exe
+  grunt.registerTask('default', ['shell']);
 
 };

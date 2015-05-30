@@ -27,6 +27,6 @@ You can also type electron into the command line and it will launch the electron
 Currently the folder structure us setup so that this repo is the /app folder. This will be changed.
 
 ## To Do:
-- [ ] Create App folder structure
-- [ ] Create grunt build file
+- [X] Create App folder structure
+- [X] Create grunt build file
 - [ ] Build App!
