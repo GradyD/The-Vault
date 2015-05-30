@@ -7,6 +7,10 @@
 
 <body>
   <h1>Finance App 1+1=2</h1>
+  <input id="username" />
+  <input id="password" />
+  <input id="url" />
+  <button onclick="login()">Login</button>
 
   <p>Here is some stats about what we are using</p>
   <p>We are using io.js
@@ -21,18 +25,29 @@
 
   <!-- Code taken from https://github.com/atom/electron/blob/master/docs/api/ipc-main-process.md -->
   <script>
-    // In renderer process (web page).
-    var ipc = require('ipc');
-    console.log(ipc.sendSync('synchronous-message', 'ping')); // prints "pong"
 
-    ipc.on('asynchronous-reply', function(arg) {
-      console.log(arg); // prints "pong"
-    });
-    ipc.send('asynchronous-message', 'ping');
+    function login() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var url = document.getElementById("url").value;
+      console.log(username);
+      console.log(password);
+      console.log(url);
+      var bankData = '{"bankData":[{"username":"'+ username + '","password":"'+ password + '","url":"' + url + '"}]}';
+      sendData(bankData);
+    }
+
+    function sendData(data) {
+      // In renderer process (web page).
+      console.log(data);
+      var ipc = require('ipc');
+      ipc.send('bankLogin', data);
+    }
+
   </script>
 
   <!-- Dev code -->
-  // <script>
+  <!-- <script>
   //   var ipc = require('ipc');
   //   var ipcTest = function() {
   //     ipc.send('message', 'pong test'); // passes 'pong test' to message in main.js
@@ -40,7 +55,7 @@
   //   console.log('running!');
   //   ipcTest();
   //   console.log('complete');
-  // </script>
+</script> -->
 </body>
 
 </html>

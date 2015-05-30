@@ -30,3 +30,4 @@ To run the app in a command prompt navigate to the root of this project and type
 - [X] Create App folder structure
 - [X] Create grunt build file
 - [ ] Build App!
+- [ ] Externalize the top menu (json file?)

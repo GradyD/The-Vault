@@ -10,6 +10,7 @@ require('crash-reporter').start();
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the javascript object is GCed.
 var mainWindow = null;
+var menu = null;
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
@@ -261,14 +262,33 @@ app.on('ready', function() {
 //   console.log(arg); // prints arg to node console
 // });
 
-// Example code taken from https://github.com/atom/electron/blob/master/docs/api/ipc-main-process.md
-var ipc = require('ipc');
-ipc.on('asynchronous-message', function(event, arg) {
-  console.log(arg);  // prints "ping"
-  event.sender.send('asynchronous-reply', 'pong');
+/** Banking **/
+var Banking = require('banking');
+ipc.on('bankLogin', function(event, arg) {
+  console.log(arg);
+  // var bank = Banking({
+  //   fid: 10898,
+  //   fidOrg: 'B1',
+  //   url: 'https://yourBanksOfxApiURL.com',
+  //   bankId: 0123456, /* If bank account use your bank routing number otherwise set to null */
+  //   user: 'username',
+  //   password: 'password',
+  //   accId: 0123456789, /* Account Number */
+  //   accType: 'CHECKING', /* CHECKING || SAVINGS || MONEYMRKT || CREDITCARD */
+  //   ofxVer: 102, /* default 102 */
+  //   app: 'QWIN', /* default  'QWIN' */
+  //   appVer: '1700', /* default 1700 */
+  // });
+  // event.sender.send('asynchronous-reply', 'pong');
 });
 
-ipc.on('synchronous-message', function(event, arg) {
-  console.log(arg);  // prints "ping"
-  event.returnValue = 'pong';
-});
+// Example code taken from https://github.com/atom/electron/blob/master/docs/api/ipc-main-process.md
+// ipc.on('asynchronous-message', function(event, arg) {
+//   console.log(arg);  // prints "ping"
+//   event.sender.send('asynchronous-reply', 'pong');
+// });
+//
+// ipc.on('synchronous-message', function(event, arg) {
+//   console.log(arg);  // prints "ping"
+//   event.returnValue = 'pong';
+// });
