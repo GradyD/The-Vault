@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # A personal Finance app.
 
 ## External Libs
@@ -31,7 +30,3 @@ Currently the folder structure us setup so that this repo is the /app folder. Th
 - [ ] Create App folder structure
 - [ ] Create grunt build file
 - [ ] Build App!
-=======
-Stuff
-and things
->>>>>>> a6d1d8dc60c4fb8bf013e3f1fc10534a6c13dfa3
