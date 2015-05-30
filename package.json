@@ -14,13 +14,13 @@
       "email": ""
     }
   ],
-  "main": "main.js",
+  "main": "src/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/"
+    "url": "https://github.com/GradyD/finance"
   },
   "bugs": {
-    "url": "https://github.com/"
+    "url": "https://github.com/GradyD/finance/issues"
   },
   "private": true,
   "devDependencies": {

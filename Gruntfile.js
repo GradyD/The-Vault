@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     shell: {
       RunApp: {
-        command: 'node_modules\\electron-prebuilt\\dist\\electron.exe src'
+        command: 'node_modules\\electron-prebuilt\\dist\\electron.exe ./'
       }
     }
   });

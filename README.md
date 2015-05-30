@@ -18,13 +18,11 @@ Electron is used to build a native desktop apps
 
 
 ## Notes (Windows Only):
-Until grunt package is setup you will need to manually run electron apps. You can do this multiple ways.
+The folder structure is that the (APP) is located in /src folder.
 
-https://github.com/atom/electron/blob/master/docs/tutorial/application-distribution.md
+To install all dependencies run npm install.
 
-You can also type electron into the command line and it will launch the electron app which you can drag/drop the source folder or run the command (it gives you a formatted command to run)
-
-Currently the folder structure us setup so that this repo is the /app folder. This will be changed.
+To run the app in a command prompt navigate to the root of this project and type 'grunt test'.
 
 ## To Do:
 - [X] Create App folder structure
