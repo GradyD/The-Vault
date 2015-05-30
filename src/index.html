@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Finance App</title>
+</head>
+
+<body>
+  <h1>Finance App 1+1=2</h1>
+
+  <p>Here is some stats about what we are using</p>
+  <p>We are using io.js
+    <script>
+      document.write(process.version)
+    </script>
+    and Electron
+    <script>
+      document.write(process.versions['electron'])
+    </script>
+  </p>
+
+  <!-- Code taken from https://github.com/atom/electron/blob/master/docs/api/ipc-main-process.md -->
+  <script>
+    // In renderer process (web page).
+    var ipc = require('ipc');
+    console.log(ipc.sendSync('synchronous-message', 'ping')); // prints "pong"
+
+    ipc.on('asynchronous-reply', function(arg) {
+      console.log(arg); // prints "pong"
+    });
+    ipc.send('asynchronous-message', 'ping');
+  </script>
+
+  <!-- Dev code -->
+  // <script>
+  //   var ipc = require('ipc');
+  //   var ipcTest = function() {
+  //     ipc.send('message', 'pong test'); // passes 'pong test' to message in main.js
+  //   };
+  //   console.log('running!');
+  //   ipcTest();
+  //   console.log('complete');
+  // </script>
+</body>
+
+</html>
