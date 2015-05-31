@@ -29,7 +29,17 @@ app.on('ready', function() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+
+  // This is a hack to get the correct path until we figure out a better/proper way
+  var url = __dirname;
+  if (url.substr(-1) == '/') {
+    url = url.substr(0, url.length - 2);
+  }
+  url = url.split('\\');
+  url.pop();
+  url = url.join('\\');
+
+  mainWindow.loadUrl('file://' + url + '/index.html');
   mainWindow.focus();
 
   // Open the devtools.
@@ -263,7 +273,7 @@ app.on('ready', function() {
 // });
 
 /** Banking **/
-var Banking = require('banking');
+// var Banking = require('banking');
 ipc.on('bankLogin', function(event, arg) {
   console.log(arg);
   // var bank = Banking({

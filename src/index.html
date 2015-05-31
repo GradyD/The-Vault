@@ -30,6 +30,7 @@
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
       var url = document.getElementById("url").value;
+      localStorage.setItem('username', username);
       console.log(username);
       console.log(password);
       console.log(url);
@@ -37,12 +38,12 @@
       sendData(bankData);
     }
 
-    function sendData(data) {
-      // In renderer process (web page).
-      console.log(data);
-      var ipc = require('ipc');
-      ipc.send('bankLogin', data);
-    }
+    // function sendData(data) {
+    //   // In renderer process (web page).
+    //   console.log(data);
+    //   var ipc = require('ipc');
+    //   ipc.send('bankLogin', data);
+    // }
 
   </script>
 

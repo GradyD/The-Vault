@@ -14,7 +14,7 @@
       "email": ""
     }
   ],
-  "main": "src/main.js",
+  "main": "src/mainProcess/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/GradyD/finance"
