@@ -31,3 +31,6 @@ To run the app in a command prompt navigate to the root of this project and type
 - [X] Create grunt build file
 - [ ] Build App!
 - [ ] Externalize the top menu (json file?)
+- [ ] Modify grunt build file to build distributable exe/app
+- [ ] Add SQLite
+- [ ] Save SQLite database in app data using .db extension (make sure can be read back in)

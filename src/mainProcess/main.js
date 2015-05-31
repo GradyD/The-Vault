@@ -267,29 +267,12 @@ app.on('ready', function() {
  }
 });
 
-// Takes a message and prints it to console
-// ipc.on('message', function(event, arg) {
-//   console.log(arg); // prints arg to node console
+// Synchronously returns the path to name where name is one of https://github.com/atom/electron/blob/master/docs/api/app.md#appgetpathname
+// ipc.on('getPath', function(event, pathName) {
+//   event.sender.send('setPath', );
 // });
-
-/** Banking **/
-// var Banking = require('banking');
-ipc.on('bankLogin', function(event, arg) {
-  console.log(arg);
-  // var bank = Banking({
-  //   fid: 10898,
-  //   fidOrg: 'B1',
-  //   url: 'https://yourBanksOfxApiURL.com',
-  //   bankId: 0123456, /* If bank account use your bank routing number otherwise set to null */
-  //   user: 'username',
-  //   password: 'password',
-  //   accId: 0123456789, /* Account Number */
-  //   accType: 'CHECKING', /* CHECKING || SAVINGS || MONEYMRKT || CREDITCARD */
-  //   ofxVer: 102, /* default 102 */
-  //   app: 'QWIN', /* default  'QWIN' */
-  //   appVer: '1700', /* default 1700 */
-  // });
-  // event.sender.send('asynchronous-reply', 'pong');
+ipc.on('getPath', function(event, pathName) {
+  event.returnValue = app.getPath(pathName);
 });
 
 // Example code taken from https://github.com/atom/electron/blob/master/docs/api/ipc-main-process.md

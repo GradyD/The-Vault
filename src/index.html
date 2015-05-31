@@ -12,7 +12,7 @@
   <input id="url" />
   <button onclick="login()">Login</button>
 
-  <p>Here is some stats about what we are using</p>
+  <!-- <p>Here is some stats about what we are using</p>
   <p>We are using io.js
     <script>
       document.write(process.version)
@@ -21,22 +21,34 @@
     <script>
       document.write(process.versions['electron'])
     </script>
-  </p>
+  </p> -->
 
+
+  <script>
+    var config = require("./config.js");
+    var args = {username: 'gradyD'};
+
+
+    // var configFile = config.load();
+    // console.log(configFile);
+
+    var configFile = config.loadCreate();
+    console.log(configFile);
+  </script>
   <!-- Code taken from https://github.com/atom/electron/blob/master/docs/api/ipc-main-process.md -->
   <script>
 
-    function login() {
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-      var url = document.getElementById("url").value;
-      localStorage.setItem('username', username);
-      console.log(username);
-      console.log(password);
-      console.log(url);
-      var bankData = '{"bankData":[{"username":"'+ username + '","password":"'+ password + '","url":"' + url + '"}]}';
-      sendData(bankData);
-    }
+    // function login() {
+    //   var username = document.getElementById("username").value;
+    //   var password = document.getElementById("password").value;
+    //   var url = document.getElementById("url").value;
+    //   localStorage.setItem('username', username);
+    //   console.log(username);
+    //   console.log(password);
+    //   console.log(url);
+    //   var bankData = '{"bankData":[{"username":"'+ username + '","password":"'+ password + '","url":"' + url + '"}]}';
+    //   sendData(bankData);
+    // }
 
     // function sendData(data) {
     //   // In renderer process (web page).
@@ -46,17 +58,6 @@
     // }
 
   </script>
-
-  <!-- Dev code -->
-  <!-- <script>
-  //   var ipc = require('ipc');
-  //   var ipcTest = function() {
-  //     ipc.send('message', 'pong test'); // passes 'pong test' to message in main.js
-  //   };
-  //   console.log('running!');
-  //   ipcTest();
-  //   console.log('complete');
-</script> -->
 </body>
 
 </html>
