@@ -9,6 +9,10 @@
   * Electron is used to build a native desktop apps
   * API: https://github.com/atom/electron/tree/master/docs/api
 
+* Winston Logger https://github.com/winstonjs/winston
+  * Used as our log generator (logger)
+  * Docs: https://github.com/winstonjs/winston#usage
+
 ## Recommended Atom Packages
 * editorconfig: https://atom.io/packages/editorconfig
   * Manual configure of style guides
@@ -34,3 +38,8 @@ To run the app in a command prompt navigate to the root of this project and type
 - [ ] Modify grunt build file to build distributable exe/app
 - [ ] Add SQLite
 - [ ] Save SQLite database in app data using .db extension (make sure can be read back in)
+- [X] Add logging to config.js
+- [ ] Add logging to index.html
+- [ ] Adjust logging to roll logs ever X minutes or at specific size
+- [ ] Log cleanup
+- [ ] Figure out what methods are needed for config.js (load, update, etc)
