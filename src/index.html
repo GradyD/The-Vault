@@ -12,26 +12,9 @@
   <input id="url" />
   <button onclick="login()">Login</button>
 
-  <!-- <p>Here is some stats about what we are using</p>
-  <p>We are using io.js
-    <script>
-      document.write(process.version)
-    </script>
-    and Electron
-    <script>
-      document.write(process.versions['electron'])
-    </script>
-  </p> -->
-
-
   <script>
     var config = require("./config.js");
     var args = {username: 'gradyD'};
-
-
-    // var configFile = config.load();
-    // console.log(configFile);
-
     var configFile = config.loadCreate();
     console.log(configFile);
   </script>

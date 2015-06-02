@@ -6,6 +6,10 @@ var logger = require("./utils/logger.js");
 // Expose the Config module
 module.exports = Config;
 
+// Global vars
+// Note ipc runs synchronously in this setup
+var userData = ipc.sendSync('sync-getPath', 'userData');
+
 function Config() {
   if (!(this instanceof Config)) return new Config();
 }
@@ -13,8 +17,7 @@ function Config() {
 // This function runs synchronously
 // because config options need to be set before other things happen
 Config.load = function() {
-  // Note ipc runs synchronously in this setup
-  var path = ipc.sendSync('getPath', 'userData');
+  var path = userData;
   path = path + '\\config.json';
   try {
     var data = fs.readFileSync(path, 'utf-8');
@@ -39,13 +42,13 @@ Config.load = function() {
 // This function runs synchronously
 // because config options need to be set before other things happen
 Config.loadCreate = function() {
-  // Note ipc runs synchronously in this setup
-  var path = ipc.sendSync('getPath', 'userData');
+  var path = userData;
   path = path + '\\config.json';
   try {
     var data = fs.readFileSync(path, 'utf-8');
     // logger.log('info', "Config file read");
-    logger.log('info',  'Config file read');
+    logger.log('info', 'Config file read');
+    logger.log('info', 'Config Data:', data);
     return data;
   } catch (e) {
     logger.log('info', 'Config file not found');
@@ -69,7 +72,7 @@ Config.update = function(args) {
 
 // Creates config file synchronously
 function createFile(path, args) {
-  if(args === null) {
+  if(args === undefined) {
     logger.log('info', 'Creating stub args');
     args = {
       username: '',
@@ -85,5 +88,5 @@ function createFile(path, args) {
     return 'error';
   }
   logger.log('info', 'config file created');
-  return 'created';
+  return args;
 }

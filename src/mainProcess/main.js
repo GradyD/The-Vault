@@ -268,11 +268,13 @@ app.on('ready', function() {
 });
 
 // Synchronously returns the path to name where name is one of https://github.com/atom/electron/blob/master/docs/api/app.md#appgetpathname
-// ipc.on('getPath', function(event, pathName) {
-//   event.sender.send('setPath', );
-// });
-ipc.on('getPath', function(event, pathName) {
+ipc.on('sync-getPath', function(event, pathName) {
   event.returnValue = app.getPath(pathName);
+});
+
+// Asynchronously returns the path to name where name is one of https://github.com/atom/electron/blob/master/docs/api/app.md#appgetpathname
+ipc.on('async-getPath', function(event, pathName) {
+  event.sender.send('async-returnPath', app.getPath(pathName));
 });
 
 // Example code taken from https://github.com/atom/electron/blob/master/docs/api/ipc-main-process.md
