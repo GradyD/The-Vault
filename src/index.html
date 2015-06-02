@@ -3,6 +3,10 @@
 
 <head>
   <title>Finance App</title>
+  <script>
+    var logger = require("./utils/logger.js");
+    var config = require("./config.js");
+  </script>
 </head>
 
 <body>
@@ -13,10 +17,9 @@
   <button onclick="login()">Login</button>
 
   <script>
-    var config = require("./config.js");
     var args = {username: 'gradyD'};
     var configFile = config.loadCreate();
-    console.log(configFile);
+    logger.log('info', 'Config file:', configFile);
   </script>
   <!-- Code taken from https://github.com/atom/electron/blob/master/docs/api/ipc-main-process.md -->
   <script>

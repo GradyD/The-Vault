@@ -37,9 +37,11 @@ To run the app in a command prompt navigate to the root of this project and type
 - [ ] Externalize the top menu (json file?)
 - [ ] Modify grunt build file to build distributable exe/app
 - [ ] Add SQLite
-- [ ] Save SQLite database in app data using .db extension (make sure can be read back in)
+  - [ ] Figure out waht methods are needed for database.js (create, load, update, insert, select, run query, etc)
+  - [ ] Save SQLite database in app data using .db extension (make sure can be read back in)
+  - [ ] Read in bank statements ('Add Bank Statement' aka file open);
 - [X] Add logging to config.js
-- [ ] Add logging to index.html
+- [X] Add logging to index.html
 - [ ] Adjust logging to roll logs ever X minutes or at specific size
-- [ ] Log cleanup
+- [ ] Log cleanup (delete after 5 days?)
 - [ ] Figure out what methods are needed for config.js (load, update, etc)
