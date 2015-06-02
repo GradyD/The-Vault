@@ -1,4 +1,4 @@
-# A personal Finance app.
+# The Vault
 
 ## External Libs
 * Banking JS: https://github.com/euforic/banking.js
